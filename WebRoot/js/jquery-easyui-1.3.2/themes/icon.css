@@ -1,0 +1,139 @@
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('icons/edit_add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('icons/pencil.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('icons/edit_remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('icons/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+
+.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}
+
+
+
+.icon-export{
+	background:url('icons/edit_export.png') no-repeat center center;
+}
+.icon-import{
+	background:url('icons/edit_import.png') no-repeat center center;
+}
+.icon-manager{
+	background:url('icons/manager.png') no-repeat center center;
+}
+.icon-student{
+	background:url('icons/student.png') no-repeat center center;
+}
+.icon-dorm{
+	background:url('icons/dorm.png') no-repeat center center;
+}
+.icon-building{
+	background:url('icons/building.png') no-repeat center center;
+}
+.icon-building_manager{
+	background:url('icons/building_manager.png') no-repeat center center;
+}
+.icon-tanhao{
+	background:url('icons/tanhao.png') no-repeat center center;
+}
+.icon-basic{
+	background:url('icons/basic.png') no-repeat center center;
+}
+.icon-out{
+	background:url('icons/out.png') no-repeat center center;
+}
+.icon-queQin{
+	background:url('icons/queQin.png') no-repeat center center;
+}
+.icon-homeBuilding{
+	background:url('icons/home_building.png') no-repeat center center;
+}
+.icon-buildingManage{
+	background:url('icons/buildingManage.png') no-repeat center center;
+}
+.icon-dormBasic{
+	background:url('icons/dormBasic.png') no-repeat center center;
+}
+.icon-log{
+	background:url('icons/log.png') no-repeat center center;
+}
+.icon-student_apply{
+	background:url('icons/student_apply.png') no-repeat center center;
+}
+.icon-studentApply1{
+	background:url('icons/studentApply1.png') no-repeat center center;
+}
+.icon-send_msg{
+	background:url('icons/send_msg.png') no-repeat center center;
+}
+.icon-messageProcess{
+	background:url('icons/messageProcess.png') no-repeat center center;
+}
+.icon-messageBig{
+	background:url('icons/messageBig.png') no-repeat center center;
+}
+.icon-handleMessage{
+	background:url('icons/handleMessage.png') no-repeat center center;
+}
+.icon-inDorm{
+	background:url('icons/inDorm.png') no-repeat center center;
+}
+.icon-fenseRegister{
+	background:url('icons/fenseRegister.png') no-repeat center center;
+}
+.icon-lanseRegister{
+	background:url('icons/lanseRegister.png') no-repeat center center;
+}

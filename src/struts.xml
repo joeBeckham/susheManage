@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+  	<constant name="struts.i18n.encoding" value="UTF-8" />
+ 	<!--下述语句是将struts2交给spring管理 -->	
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.action.extension" value="action"></constant>
+	
+	<!-- 配置拦截器 -->
+	<package name="all88" extends="struts-default">
+		<interceptors>
+			<interceptor name="userLogin" class="com.business.action.LoginInterceptor" />
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="userLogin"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 将上述拦截器设定为默认拦截器 -->
+		<default-interceptor-ref name="userStack"/>
+		
+		<global-results>
+			<result name="loginPath">/login.jsp</result>
+		</global-results>
+	</package>
+	
+	<!-- 登录管理 -->
+	<package name="systemmanage" extends="all88" namespace="/">
+		<action name="systemManageAction" class="com.business.action.SystemManageAction">
+			<result name="denglu" type="redirect">/main.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 学生管理 -->
+	<package name="studentmanage" extends="all88" namespace="/">
+		<action name="StudentManageAction" class="studentAction" >
+			<!-- <result name="queryChangeVo">/studentmanage/changeDorm.jsp</result> -->
+			<!-- <result name="queryOutVo">/studentmanage/outDorm.jsp</result> -->
+			<result name="queryAllBuilding">/studentmanage/studentlist.jsp</result>
+			<result name="queryDormByBuilding">/studentmanage/studentlist.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 楼宇管理员管理 -->
+	<package name="teachermanage" extends="all88" namespace="/">
+		<action name="teacherManageAction" class="teacherAction" ></action>
+	</package>
+	
+	<!-- 楼宇管理 -->
+	<package name="buildingmanage" extends="all88" namespace="/">
+		<action name="buildingManageAction" class="buidlingAction" ></action>
+	</package>
+	
+	<!-- 宿舍管理 -->
+	<package name="dormmanage" extends="all88" namespace="/">
+		<action name="dormManageAction" class="dormAction" ></action>
+	</package>
+	
+	<!-- 日志管理 -->
+	<package name="logmanage" extends="all88" namespace="/">
+		<action name="logManageAction" class="logAction" ></action>
+	</package>
+	
+</struts>    

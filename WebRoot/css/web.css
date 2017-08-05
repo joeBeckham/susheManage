@@ -1,0 +1,166 @@
+/*
+ * 使用doctype后
+ * 页面的滚动条由原来的body给了html对象
+ */
+html {
+	height:100%;	
+	border: 0;
+	overflow:auto;
+}
+ 
+body {
+	height:100%;	
+	border: 0;
+	line-height: 1;
+}
+
+
+/* 主容器样式 */
+#mainWrapper, .center {
+	margin:0 auto;
+}
+
+
+/* v1.0 | 20080212 http://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, img, b, u, i, 
+dl, dt, dd, ol, ul, li,
+form, label, th, td {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	font-size: 100%;
+}
+
+
+/*
+ * 统一字体和尺寸
+ */ 
+body,input,select,textarea,th,td,div,fieldset,blockquote,p{
+    font-family:arial,sans-serif;
+	font-size:12px;
+}
+input,textarea{font-size: 13px;}
+
+
+/* 统一边框样式 */
+input[type=text], input[type=password], textarea {
+    border:1px solid #7F9DB9;    
+    padding:2px;
+}
+input[type=text], input[type=password], select, textarea{
+    margin-top:2px;
+}
+	
+/* 统一readonly/disabled的样式 */
+.readonly, input[readonly], input[disabled], textarea[readonly],textarea[disabled] {
+	color:#555;
+	background-color: #e8e8e8;
+}
+
+/* 获得焦点时边框用红色 */
+.focus, input:focus, select:focus, textarea:focus {
+	outline:red solid 1px;
+} 
+
+
+/* 
+ * 统一超链接的样式
+ * 定义顺序不能变
+ */
+a:link {color: #0000FF;}
+a:visited {color: #0000FF;}
+a:hover {color: #FF0000;}
+
+
+/**
+ *	层浮动
+ */
+.left{ float:left; display:inline;}
+.right{	float:right; display:inline;}
+.clear { clear:both; }
+
+div.hr {
+	clear:both;
+    
+	/* 设置div高度 */
+	height:0px;
+    line-height:0px;
+    font-size:0px;
+	
+    border:1px solid #99CCFF;
+    
+    padding:0;
+    margin:2px;
+}
+
+/* 
+ *	动态按钮效果
+ */
+button, input[type=button]{
+	border: 1px solid #7F9DB9;
+    padding: 2px;
+	background:#ecf1fb;
+	
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA);
+}
+
+button:hover, input[type=button]:hover {
+    border: 1px solid #ff0000;
+    padding: 2px;	
+	background:lightblue;
+	
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#4444FA);    
+    cursor: pointer;
+}
+
+
+/* 
+ * 编辑表格的样式 */
+.table-edit {
+	border-collapse: collapse;
+	border-spacing:0;
+}
+.table-edit tr{height:22px;}
+
+
+.table-edit td{	
+	border-color:#cccccc;
+	border-style:none none dashed none;
+	border-width:0px 0px 1px 0px;
+	padding:5px;
+}
+.table-edit .title{	
+	background-color:#CCF;
+}
+
+.title {
+	background:url('image/title.png') repeat-x;
+	height:26px;
+}
+
+/* 修复与easyui冲突的地方 */
+td span.combobox{
+	margin-top:2px;
+}
+input.combobox-text{
+	margin:0;
+}
+
+input[readonly].combotree-text{
+	background:window;	
+}
+input[disabled].combotree-text{
+	background:#e8e8e8;	
+}
+
+div.menu-item{border:0}
+
+div.combobox-content{
+	cursor:pointer;	
+}
+
+div.tree-node{
+	height:23px;
+}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+body{padding: 0px;margin: 0px;}
+#header{width: auto;min-height: 70px;line-height: 70px;}
+#header{border-bottom: medium solid #95B8E7;}
+span.title_con{font-family:"微软雅黑";font-style: normal;font-size: 2em;font-weight:800 ;color: #95B8E7;padding-left: 1em;}
+#content{width: auto;height:28em;text-align: center;background-image: url(../image/xgxt_login_bg.jpg);background-size: 100% 100%;}
+#footer{width: auto;min-height: 60px;line-height:60px;}
+#footer{border-top: thin solid #39A631;}
+.con{width: 35%;height: 20em;margin-top:4em;}
+.con{border: thin solid #95B8E7;}
+.con_title{background-color: #E0EDFF;width: auto;height: 3.5em;line-height: 3.5em;text-align: center;}
+.con_title_sp{font-family: "微软雅黑";font-size: 1.5em;font-weight: 500;color: black;}
+.con_border_bottom{border-bottom:1px solid #95B8E7;}
+.con_input{margin: 2em 0 1em 0;}
+.submit-btn{width: 8em;height: 2em;background-color: #E0EDFF;border-radius: 4px;border: 0px;color: black;font-family:"微软雅黑";font-size: 1em;font-weight: 500;}
+.con_input span{font-family: "微软雅黑";font-size: 1em;font-weight: bold;color: #333;}
+.con_input input{width: 15em;padding: 0.5em 1em;border: 1px solid #bbb;}
+.submit-btn{margin: 1em 0 1em 0;}
+.con_select{margin-left: 2em;font-family:"微软雅黑";font-size: 1em;color: #333;}

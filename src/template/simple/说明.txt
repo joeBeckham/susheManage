@@ -1,0 +1,12 @@
+如何修改Struts2 FiledError样式
+有时候，使用Struts2的<s:fielderror />标签还是比较好的。但是这个标签本来的样式实在很难看，不但换行，而且有个大大的黑点。一看就知道用了<ui><li /></ui>。
+
+修改方法：
+
+1. 找到struts2-core-2.XXX.jar，解压。
+
+2. 在struts2-core-2. XXX/template/simple目录下找到fielderror.ftl
+
+3. 在项目的src下建立一个template文件夹，并建立simple子文件夹。将fielderror.ftl放到这个simple子文件夹里。打开这个fielderror.ftl文件，用替换的方式，把"<li>","</li>"都替换成空字符串。
+
+4. 重新编译项目。

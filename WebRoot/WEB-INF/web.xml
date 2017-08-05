@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 过滤器 -->
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>com.business.util.ChatSetFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+  
+   <!-- 配置监听器  -->
+  	<listener>
+	      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+  
+  <!--	配置spring文件-->
+  	<context-param>
+	   <param-name>contextConfigLocation</param-name>
+	   <param-value>
+	   		classpath:applicationContext.xml,
+	   		classpath:springJMSConfiguration.xml
+	   </param-value>
+	</context-param>
+	
+	
+	<!-- 配置过滤器 -->
+	  <filter>
+	  	<filter-name>struts2</filter-name>
+	  	<filter-class>
+	  		org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+	  	</filter-class>
+	  </filter>
+	  <filter-mapping>
+	  	<filter-name>struts2</filter-name>
+	  	<url-pattern>*.action</url-pattern>
+	  </filter-mapping>
+	<filter-mapping>
+	  	<filter-name>struts2</filter-name>
+	  	<url-pattern>*.jsp</url-pattern>
+	  </filter-mapping>
+	
+	<!-- 加上下面的这一点   的 作用：在Tomcat6 或者 以下  中 要加上，否则  mq Ajax 中 会报错-->
+	<filter>  
+	    <filter-name>session</filter-name>  
+	    <filter-class>org.eclipse.jetty.continuation.ContinuationFilter</filter-class>  
+	</filter>  
+	<filter-mapping>  
+	    <filter-name>session</filter-name>  
+	    <url-pattern>/*</url-pattern>  
+	</filter-mapping>
+	
+  <!-- MQ的配置 -->
+	  <context-param>
+	    <description>Whether we should include an embedded broker or not</description>
+	    <param-name>org.apache.activemq.brokerURL</param-name>
+	    <param-value>tcp://127.0.0.1:61616</param-value>
+	  </context-param>
+	  <servlet>
+	    <servlet-name>AjaxServlet</servlet-name>
+	    <servlet-class>org.apache.activemq.web.AjaxServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	    <async-supported>true</async-supported>
+	  </servlet>
+	  <servlet>
+	    <servlet-name>MessageServlet</servlet-name>
+	    <servlet-class>org.apache.activemq.web.MessageServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	  </servlet>
+	  <servlet>
+	    <servlet-name>QueueBrowseServlet</servlet-name>
+	    <servlet-class>org.apache.activemq.web.QueueBrowseServlet</servlet-class>
+	  </servlet>
+	  <servlet>
+	    <servlet-name>PortfolioPublishServlet</servlet-name>
+	    <servlet-class>org.apache.activemq.web.PortfolioPublishServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	  </servlet>
+	  <servlet-mapping>
+	    <servlet-name>AjaxServlet</servlet-name>
+	    <url-pattern>/amq/*</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	    <servlet-name>MessageServlet</servlet-name>
+	    <url-pattern>/message/*</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	    <servlet-name>QueueBrowseServlet</servlet-name>
+	    <url-pattern>/queueBrowse/*</url-pattern>
+	  </servlet-mapping>
+	  <servlet-mapping>
+	    <servlet-name>PortfolioPublishServlet</servlet-name>
+	    <url-pattern>/portfolioPublish</url-pattern>
+	  </servlet-mapping>
+	  
+ </web-app>

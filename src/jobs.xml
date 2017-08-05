@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="RecNoticeJob" class="com.business.job.RecNoticeJob"/>
+	
+	<bean id="scheduledTaskBase" abstract="true">
+		<!-- 任务执行延迟秒数 -->
+		<property name="delay">
+			<value>1000</value>
+		</property>
+		<!-- 重复执行任务间隔，默认10=10*1000秒 -->
+		<!-- 1秒钟  读取一次 -->
+		<property name="period">
+			<value>1000</value>
+		</property>
+	</bean>
+	
+	
+	<!-- 业务 任务     缓存类任务 -->
+	<bean id="recNoticeJobTask" class="org.springframework.scheduling.timer.ScheduledTimerTask"
+		parent="scheduledTaskBase" >
+		<property name="timerTask">
+			<ref local="RecNoticeJob" />
+		</property>
+	</bean>
+
+	<bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+  				<ref local="recNoticeJobTask" />    
+		    </list>
+		</property>
+		<property name="daemon">
+			<value>false</value>
+		</property>
+	</bean>
+</beans>

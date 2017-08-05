@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core-5.8.0.xsd">
+
+     <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"> 
+         <constructor-arg index="0" value="tcp://127.0.0.1:61616"/> 
+         <!-- 异步发送消息 -->
+         <property name="useAsyncSend" value="true"/> 
+        <!-- 队列消费者配置预取值 -->
+         <property name="prefetchPolicy" > 
+         	<bean class="org.apache.activemq.ActiveMQPrefetchPolicy"> 
+         		<property name="queuePrefetch" value="2"/> 
+         	</bean> 
+         </property> 
+         <property name="userName" value="admin"/>      <!-- 这个 用户名 随意  -->
+         <property name="password" value="admin"/>  <!-- 密码在 jetty-realm.properties 中设置 -->
+     </bean> 
+    
+    
+     <!-- 连接池  -->
+    <bean id="pooledConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop"> 
+        <property name="connectionFactory"  ref="amqConnectionFactory" /> 
+    </bean> 
+
+    <!-- ConnectionFactory Definition -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <constructor-arg ref="amqConnectionFactory"/>
+    </bean>
+
+    <!--  Default Destination Queue Definition-->
+    <bean id="defaultDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="test"/>
+    </bean>
+
+    <!-- JmsTemplate Definition -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="pooledConnectionFactory"/>
+        <property name="defaultDestination" ref="defaultDestination"/>
+    </bean>
+
+ 	<!-- JmsTemplate Notice-->
+    <bean id="jmsTemplateNotice" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="pooledConnectionFactory"/>
+        <property name="defaultDestination" ref="defaultDestination"/>
+        <!-- 加入事物回滚 -->
+         <property name="sessionTransacted" value="true"/>
+    </bean>
+    
+</beans>
