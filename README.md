@@ -22,11 +22,11 @@
 界面展示：
 -------
 （1）登录界面：<br>
-![image](https://github.com/xbqcsdn/image/blob/master/image/login.png)
+![image](https://github.com/xbqcsdn/image/blob/master/image/login.png) <br> 
 （2）学生基本信息界面
-![image](https://github.com/xbqcsdn/image/blob/master/image/studentinfo.png)
+![image](https://github.com/xbqcsdn/image/blob/master/image/studentinfo.png) <br> 
 （3）学生登录后可以查看自己的缺寝信息等
-![image](https://github.com/xbqcsdn/image/blob/master/image/studentmanage.png)
+![image](https://github.com/xbqcsdn/image/blob/master/image/studentmanage.png) <br> 
 （4）楼宇管理员可以登记缺寝学生记录
-![image](https://github.com/xbqcsdn/image/blob/master/image/susemanager.png)
+![image](https://github.com/xbqcsdn/image/blob/master/image/susemanager.png) <br> 
 
