@@ -1,6 +1,7 @@
 基于SSH+easyUI+ActiveMQ+MySQL的校园宿舍管理系统。
 -------
 分为系统管理员、楼宇管理员、学生三种权限。
+此系统是本人之前的毕业设计，如需要 论文，请关注 微信公众号：码咖，回复：毕业论文，即可获取。
 
 模块介绍： 
 -------
@@ -26,7 +27,7 @@
 （2）学生基本信息界面<br> 
 ![image](https://github.com/xbqcsdn/image/blob/master/image/studentinfo.png) <br> 
 （3）学生登录后可以查看自己的缺寝信息等<br> 
-![image](https://github.com/xbqcsdn/image/blob/master/image/studentmanage.png) <br> 
+![image](https://github.com/joeBeckham/image/blob/master/image/studentmanage.png) <br> 
 （4）楼宇管理员可以登记缺寝学生记录<br> 
 ![image](https://github.com/xbqcsdn/image/blob/master/image/susemanager.png) <br> 
 
