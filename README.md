@@ -1,6 +1,6 @@
 基于SSH+easyUI+ActiveMQ+MySQL的校园宿舍管理系统。
 -------
-分为系统管理员、楼宇管理员、学生三种权限。  <br>  <br> 
+分为系统管理员、楼宇管理员、学生三种权限。  <br>  
 
 **注：** 此系统是本人之前的毕业设计，如需要 论文，请关注 微信公众号：**码咖** 或者扫描下方二维码，回复：毕业论文，即可获取。另外，请给个 **star** 哦 <br> 
 <img src="https://github.com/joeBeckham/image/blob/master/image/qrcode_wx.jpg" width="230"> <br> 
